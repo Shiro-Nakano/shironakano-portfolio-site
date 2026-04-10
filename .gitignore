@@ -1,0 +1,10 @@
+# OSが自動生成するファイル
+.DS_Store        # Mac特有
+Thumbs.db        # Windows特有
+
+# エディタの設定ファイル
+.vscode/
+.idea/
+
+# 環境変数（APIキー等の機密情報）
+.env
