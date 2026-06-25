@@ -1,0 +1,199 @@
+/* ============================================
+   contact.css
+   役割：Contactページ専用のスタイル
+   　　　・ページレイアウト
+   　　　・イントロテキスト
+   　　　・お問い合わせフォーム
+   　　　・入力欄・セレクト・テキストエリア
+   　　　・送信ボタン
+   ============================================ */
+
+
+/* ============================================
+   Contactページ全体
+   ============================================ */
+.page-contact.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* セクションタイトル（C）より下のコンテンツエリア */
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 30px;
+  margin-top: clamp(100px, 14vw, 180px);
+  overflow-y: auto;
+}
+
+
+/* ============================================
+   イントロテキスト
+   Figma：Kaisei Opti 24px
+   ============================================ */
+.contact-intro {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(14px, 1.6vw, 24px);
+  font-weight: 400;
+  color: var(--contact-intro-text);
+  line-height: 1.45;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* ============================================
+   フォーム本体
+   Figma：1232 x 494px、border 5px、radius 62px
+   ============================================ */
+.contact-form {
+  background: var(--card-bg);
+  border: 5px solid var(--card-border);
+  border-radius: 62px;
+  padding: 36px 44px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  max-width: 1232px;
+  position: relative;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+
+/* ============================================
+   フォーム左側（名前・会社名・メール・希望サービス）
+   ============================================ */
+.form-left {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* ============================================
+   フォーム右側（お問い合わせ内容テキストエリア）
+   ============================================ */
+.form-right {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+}
+
+
+/* ============================================
+   フォームグループ（ラベル＋入力欄のセット）
+   ============================================ */
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ラベル　Figma：Kaisei Opti 20px */
+.form-group label {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(14px, 1.3vw, 20px);
+  font-weight: 400;
+  color: var(--input-text);
+  line-height: 1.45;
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+/* テキスト入力・セレクトボックス
+   Figma：359 x 50px、border 3px、radius 10px */
+.form-group input,
+.form-group select {
+  flex: 1;
+  height: 50px;
+  background: var(--input-bg);
+  border: 3px solid var(--input-border);
+  border-radius: 10px;
+  padding: 0 14px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 16px;
+  color: var(--input-text);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* フォーカス時 */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--bg-accent);
+  box-shadow: 0 0 0 2px rgba(135, 135, 135, 0.2);
+}
+
+
+/* ============================================
+   お問い合わせ内容グループ（右側・縦並び）
+   ============================================ */
+.form-group-details {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-group-details label {
+  padding-top: 14px;
+}
+
+/* テキストエリア
+   Figma：500 x 373px、border 3px、radius 10px */
+.form-group textarea {
+  flex: 1;
+  height: 100%;
+  min-height: 180px;
+  background: var(--input-bg);
+  border: 3px solid var(--input-border);
+  border-radius: 10px;
+  padding: 14px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 16px;
+  color: var(--input-text);
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+/* ============================================
+   送信ボタン
+   Figma：171 x 36px、border 3px、radius 10px
+   必須項目が全部入力されるまで無効
+   ============================================ */
+.submit-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 44px;
+  width: 171px;
+  height: 36px;
+  background: var(--submit-bg);
+  border: 3px solid var(--submit-border);
+  border-radius: 10px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--submit-text);
+  line-height: 29px;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+/* 全項目入力済み：有効状態 */
+.submit-btn.enabled {
+  cursor: pointer;
+  opacity: 1;
+  background: var(--bg-accent);
+}
+
+.submit-btn.enabled:hover {
+  opacity: 0.9;
+}

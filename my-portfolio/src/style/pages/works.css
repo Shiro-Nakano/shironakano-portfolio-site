@@ -1,0 +1,143 @@
+/* ============================================
+   works.css
+   役割：Worksページ専用のスタイル
+   　　　・ページレイアウト
+   　　　・フィルターボタン（ALL/Illust/Logo...）
+   　　　・作品グリッド
+   　　　・作品アイテム
+   ============================================ */
+
+
+/* ============================================
+   Worksページ全体
+   ============================================ */
+.page-works.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* セクションタイトル（W）より下のコンテンツエリア */
+.works-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px;
+  margin-top: clamp(100px, 18vw, 240px);
+  overflow: hidden;
+}
+
+
+/* ============================================
+   フィルターボタン（ALL / Illust / Logo...）
+   Figma：150 x 50px、radius 12px、Neuton 36px
+   ============================================ */
+.sort-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.sort-btn {
+  font-family: 'Neuton', serif;
+  font-size: 36px;
+  font-weight: 400;
+  min-width: 120px;
+  height: 50px;
+  padding: 0 20px;
+  line-height: 46px;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--sort-btn-bg);
+  color: var(--sort-btn-text);
+  text-align: center;
+}
+
+/* 選択中のボタン */
+.sort-btn.active {
+  background: var(--sort-btn-active-bg);
+  color: var(--sort-btn-active-text);
+  border-color: var(--sort-btn-active-border);
+}
+
+.sort-btn:hover:not(.active) {
+  opacity: 0.8;
+}
+
+
+/* ============================================
+   作品グリッドのスクロールエリア
+   ここだけスクロールする（ページ全体はスクロールしない）
+   ============================================ */
+.works-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+/* スクロールバーのデザイン */
+.works-scroll-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+.works-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.works-scroll-area::-webkit-scrollbar-thumb {
+  background: var(--bg-accent);
+  border-radius: 7px;
+}
+
+
+/* ============================================
+   作品グリッド
+   Figma：3列、1アイテム 400px
+   ============================================ */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+
+/* ============================================
+   作品アイテム
+   Figma：400 x 350px、border 3px
+   ============================================ */
+.work-item {
+  background: var(--work-item-bg);
+  border: 3px solid var(--work-item-border);
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 400 / 350;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+/* ホバー時：画像を少し拡大 */
+.work-item:hover img {
+  transform: scale(1.05);
+}
+
+/* フィルターで非表示になったアイテム */
+.work-item.hidden {
+  display: none;
+}
+
+/* ロゴアイテムは横長（Figma：400 x 130px） */
+.work-item[data-category="logo"] {
+  aspect-ratio: 400 / 130;
+}

@@ -1,0 +1,111 @@
+/* ============================================
+   service.css
+   役割：Serviceページ専用のスタイル
+   　　　・ページレイアウト
+   　　　・サービスカード3枚
+   　　　・カードヘッダー・タイトル・説明文
+   ============================================ */
+
+
+/* ============================================
+   Serviceページ全体
+   ============================================ */
+.page-service.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* セクションタイトル（S）より下のコンテンツエリア */
+.service-content {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  padding: 16px 24px;
+  margin-top: clamp(100px, 16vw, 210px);
+  align-items: stretch;
+  overflow: hidden;
+}
+
+
+/* ============================================
+   サービスカード（3枚横並び）
+   Figma：約400 x 476px、border 3px
+   ============================================ */
+.service-card {
+  flex: 1;
+  background: var(--service-card-bg);
+  border: 3px solid var(--service-card-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+
+/* ============================================
+   カードヘッダー（グレー背景＋タイトル文字）
+   Figma：377 x 118px
+   ============================================ */
+.service-card-header {
+  position: relative;
+  height: 118px;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+/* ヘッダーの背景色 */
+.service-card-header-img {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-secondary);
+}
+
+/* ヘッダーのタイトル文字（Illustration & Logo など）
+   Figma：Neuton 55〜60px、stroke 1px */
+.service-card-title-en {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-family: 'Neuton', serif;
+  font-size: clamp(28px, 3.5vw, 55px);
+  font-weight: 400;
+  color: var(--service-header-text);
+  -webkit-text-stroke: 1px var(--service-header-stroke);
+  line-height: 1.15;
+}
+
+/* & 記号は少し小さく */
+.service-ampersand {
+  font-size: 0.9em;
+  margin: 0 2px;
+}
+
+
+/* ============================================
+   カードサブタイトル
+   Figma：Kaisei Opti 28px bold
+   ============================================ */
+.service-card-subtitle {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(16px, 2vw, 28px);
+  font-weight: 700;
+  padding: 14px 14px 6px;
+  line-height: 1.5;
+}
+
+
+/* ============================================
+   カード説明文
+   Figma：Kaisei Opti 20px
+   ============================================ */
+.service-card-desc {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(12px, 1.4vw, 20px);
+  font-weight: 400;
+  color: var(--service-card-text);
+  padding: 6px 14px 14px;
+  line-height: 1.7;
+  flex: 1;
+  overflow-y: auto;
+}

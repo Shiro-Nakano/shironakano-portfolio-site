@@ -1,0 +1,111 @@
+/* ============================================
+   modal.css
+   役割：Worksページの作品詳細モーダル
+   　　　・オーバーレイ（暗い背景）
+   　　　・モーダル本体（画像＋テキスト）
+   　　　・モーダル内の各テキスト
+   
+   ※ モーダルのHTMLはworks.tsが生成する
+   　 このCSSはworks.tsが#outerFrameに
+   　 差し込んだあとに適用される
+   ============================================ */
+
+
+/* ============================================
+   オーバーレイ（画面全体を覆う暗い背景）
+   通常は非表示、.active で表示される
+   ============================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* オーバーレイクリックで閉じる */
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+
+/* ============================================
+   モーダル本体
+   Figma：829 x 498px、radius 10px
+   ============================================ */
+.modal-content {
+  background: var(--modal-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  width: 90%;
+  max-width: 829px;
+  max-height: 80vh;
+  overflow: hidden;
+  cursor: default; /* 本体クリックは閉じない */
+}
+
+
+/* ============================================
+   モーダル左側：画像エリア
+   ============================================ */
+.modal-image {
+  flex: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  min-width: 0;
+}
+
+.modal-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+
+/* ============================================
+   モーダル右側：テキストエリア
+   ============================================ */
+.modal-info {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+/* 作品タイトル　Figma：Neuton 40px */
+.modal-title {
+  font-family: 'Neuton', serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--modal-text);
+  line-height: 1.27;
+}
+
+/* 作品説明　Figma：Neuton 40px */
+.modal-desc {
+  font-family: 'Neuton', serif;
+  font-size: clamp(18px, 2.5vw, 40px);
+  font-weight: 400;
+  color: var(--modal-text);
+  line-height: 1.27;
+  white-space: pre-line; /* \n で改行できるようにする */
+}
+
+/* 制作日　Figma：Kaisei Opti 24px */
+.modal-date {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(14px, 1.6vw, 24px);
+  font-weight: 400;
+  color: var(--modal-text);
+  line-height: 1.45;
+  opacity: 0.7;
+}

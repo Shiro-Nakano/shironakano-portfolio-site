@@ -1,0 +1,166 @@
+/* ============================================
+   footer.css
+   役割：画面下部のフッターエリア
+   　　　・フッター枠
+   　　　・コピーライト
+   　　　・ライト/ダークモード切替トグル
+   　　　・SNSリンク
+   ============================================ */
+
+
+/* ============================================
+   フッター枠
+   Figma：高さ 42px、左右padding あり
+   ============================================ */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 22px 6px 0;
+  height: 42px;
+  min-height: 42px;
+  position: relative;
+  z-index: 10;
+}
+
+
+/* ============================================
+   フッター左：モード切替トグル
+   サイドバーの右隣あたりに絶対配置
+   ============================================ */
+.footer-left {
+  position: absolute;
+  right: 96%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+
+/* ============================================
+   フッター中央：コピーライト
+   ============================================ */
+.footer-common {
+  position: absolute;
+  left: 86%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Figma：Neuton 24px bold、lh 30.4px */
+.commons {
+  font-family: 'Neuton', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--commons-text);
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+
+/* ============================================
+   フッター右：SNSリンク
+   画面右上に固定表示（Figma：y = 5px）
+   ============================================ */
+.footer-right {
+  position: fixed;
+  top: 5px;
+  right: 22px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+}
+
+.sns-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.sns-links a {
+  display: flex;
+  align-items: center;
+  color: var(--commons-text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.sns-links a:hover {
+  opacity: 0.7;
+}
+
+/* Figma：pixiv 75x30、instagram 30x30、X 29x30 */
+.sns-icon {
+  height: 30px;
+  width: auto;
+}
+
+.sns-pixiv {
+  width: 75px;
+}
+
+.sns-instagram {
+  width: 30px;
+}
+
+.sns-x {
+  width: 29px;
+}
+
+
+/* ============================================
+   ライト/ダークモード切替トグル
+   Figma：134 x 30px、border 3px、slider 53 x 20px
+   ============================================ */
+.mode-toggle {
+  width: 134px;
+  height: 30px;
+  background: var(--mode-toggle-bg);
+  border: 3px solid var(--mode-toggle-border);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  transition: all 0.3s;
+}
+
+/* Figma：Neuton 20px、lh 25.3px */
+.mode-label {
+  font-family: 'Neuton', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  z-index: 1;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.mode-light {
+  color: var(--mode-light-text);
+}
+
+.mode-dark {
+  color: var(--mode-dark-text);
+}
+
+/* スライダー（白い丸いつまみ）
+   Figma：53 x 20px */
+.mode-slider {
+  position: absolute;
+  width: 53px;
+  height: 20px;
+  background: var(--mode-toggle-slider);
+  border-radius: 10px;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s, background 0.3s;
+}
+
+/* ダークモード時：スライダーを右側へ移動 */
+[data-theme="dark"] .mode-slider {
+  left: calc(100% - 57px);
+}

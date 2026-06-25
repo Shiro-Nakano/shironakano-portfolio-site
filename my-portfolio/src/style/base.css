@@ -1,0 +1,234 @@
+/* ============================================
+    base.css
+    役割：サイト全体の土台
+    　　　・リセットCSS
+    　　　・CSS変数（色・テーマ）
+    　　　・html / body / #app の基本スタイル
+   ============================================ */
+
+
+/* == リセットCSS == */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* == CSS変数　ライトモード（デフォルト） == */
+:root {
+    /* 背景（background） */
+    --bg-primary: #ffffff;
+    --bg-secondary: #d9d9d9;
+    --bg-accent: #a4a4a4;
+
+    /* テキスト */
+    --text-primary: #878787;
+    --text-secondary: #ffffff;
+
+    /* ボーダー */
+    --border-color: #878787;
+
+    /* 外枠（outer-frame） */
+    --frame-bg: #ffffff;
+    --frame-border: #878787;
+
+    /* サイドバー */
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #878787;
+    --sidebar-text: #878787;
+    --menu-active-stroke: #878787;
+
+    /* カード */
+    --card-bg: #ffffff;
+    --card-border: #878787;
+
+    /* フォーム入力 */
+    --input-bg: #d9d9d9;
+    --input-border: #878787;
+    --input-text: #000000;
+
+    /* 送信ボタン */
+    --submit-bg: #d9d9d9;
+    --submit-text: #000000;
+    --submit-border: #878787;
+
+    /* モーダル */
+    --modal-bg: #ffffff;
+    --modal-text: #000000;
+
+    /* セクションタイトル */
+    --section-title-stroke: #878787;
+
+    /* ソートボタン（Worksページ） */
+    --sort-btn-bg: #878787;
+    --sort-btn-text: #ffffff;
+    --sort-btn-active-bg: #ffffff;
+    --sort-btn-active-text: #878787;
+    --sort-btn-active-border: #878787;
+
+    /* TOPページ ナビボタン */
+    --top-btn-bg: #ffffff;
+    --top-btn-border: #878787;
+    --top-btn-text: #ffffff;
+    --top-btn-text-stroke: #878787;
+
+  /* フッター */
+    --commons-text: #ffffff;
+
+  /* モード切替トグル */
+    --mode-toggle-bg: #a4a4a4;
+    --mode-toggle-border: #878787;
+    --mode-toggle-slider: #ffffff;
+    --mode-light-text: #878787;
+    --mode-dark-text: #ffffff;
+
+  /* TOPページ ポリゴン */
+    --polygon-color: #878787;
+
+  /* Worksページ アイテム */
+    --work-item-bg: #ffffff;
+    --work-item-border: #878787;
+
+    /* Serviceページ カード */
+    --service-card-bg: #ffffff;
+    --service-card-border: #878787;
+    --service-card-text: #878787;
+    --service-header-text: #ffffff;
+    --service-header-stroke: #000000;
+
+    /* Profileページ */
+    --profile-detail-bg: #ffffff;
+    --profile-detail-border: #878787;
+    --profile-detail-text: #878787;
+    --profile-name-stroke: #878787;
+    --profile-name-fill: #ffffff;
+
+    /* Contactページ */
+    --contact-intro-text: #878787;
+}
+
+
+/* == CSS変数　ダークモード（フッターのトグルボタンで切り替わる） == */
+[data-theme="dark"] {
+    /* 背景 */
+    --bg-primary: #000000;
+    --bg-secondary: #d9d9d9;
+    --bg-accent: #a4a4a4;
+
+    /* テキスト */
+    --text-primary: #d9d9d9;
+    --text-secondary: #000000;
+
+    /* ボーダー */
+    --border-color: #ffffff;
+
+    /* 外枠（outer-frame） */
+    --frame-bg: #000000;
+    --frame-border: #ffffff;
+
+    /* サイドバー */
+    --sidebar-bg: #000000;
+    --sidebar-border: #ffffff;
+    --sidebar-text: #ffffff;
+    --menu-active-stroke: #ffffff;
+
+    /* カード */
+    --card-bg: #000000;
+    --card-border: #ffffff;
+
+    /* フォーム入力 */
+    --input-bg: #a4a4a4;
+    --input-border: #ffffff;
+    --input-text: #ffffff;
+
+  /* 送信ボタン */
+    --submit-bg: #a4a4a4;
+    --submit-text: #ffffff;
+    --submit-border: #ffffff;
+
+    /* モーダル */
+    --modal-bg: #000000;
+    --modal-text: #ffffff;
+
+   /* セクションタイトル */
+    --section-title-stroke: #ffffff;
+
+    /* ソートボタン（Worksページ） */
+    --sort-btn-bg: #878787;
+    --sort-btn-text: #ffffff;
+    --sort-btn-active-bg: #ffffff;
+    --sort-btn-active-text: #878787;
+    --sort-btn-active-border: #878787;
+
+  /* TOPページ ナビボタン */
+    --top-btn-bg: #000000;
+    --top-btn-border: #ffffff;
+    --top-btn-text: #000000;
+    --top-btn-text-stroke: #ffffff;
+
+    /* フッター */
+    --commons-text: #ffffff;
+
+    /* モード切替トグル */
+    --mode-toggle-bg: #d9d9d9;
+    --mode-toggle-border: #ffffff;
+    --mode-toggle-slider: #000000;
+    --mode-light-text: #000000;
+    --mode-dark-text: #ffffff;
+
+    /* TOPページ ポリゴン */
+    --polygon-color: #878787;
+
+    /* Worksページ アイテム */
+    --work-item-bg: #000000;
+    --work-item-border: #ffffff;
+
+    /* Serviceページ カード */
+    --service-card-bg: #000000;
+    --service-card-border: #ffffff;
+    --service-card-text: #ffffff;
+    --service-header-text: #000000;
+    --service-header-stroke: #ffffff;
+
+    /* Profileページ */
+    --profile-detail-bg: #000000;
+    --profile-detail-border: #ffffff;
+    --profile-detail-text: #ffffff;
+    --profile-name-stroke: #ffffff;
+    --profile-name-fill: #000000;
+
+    /* Contactページ */
+    --contact-intro-text: #ffffff;
+}
+
+
+/* == html == */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+
+/* === body === */
+body {
+    font-family: 'Neuton', serif;
+    background: #000000;
+    color: var(--text-primary);
+    /* サイト全体のスクロールは禁止、各ページ内のみスクロール */
+    overflow: hidden;   
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* === #app　サイト全体のルートコンテナ === */
+#app {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  position: relative;
+}

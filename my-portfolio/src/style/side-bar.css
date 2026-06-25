@@ -1,0 +1,94 @@
+/* ============================================
+　　side-bar.css
+　　役割：左サイドバー全体のスタイル
+　　　・サイドバー枠
+　　　・サイトロゴ
+　　　・ナビゲーションメニュー
+   ============================================ */
+
+
+/* ==　サイドバー枠　Figma：160 x 779px、border 5px　== */
+.sidebar {
+    position: relative;
+    width: 160px;
+    min-width: 160px;
+
+  /* 高さ：ビューポートから上マージン(8px)とフッター(42px)を引いた値 */
+    height: calc(100vh - 8px - 42px);
+    margin-top: 8px;
+
+    background: var(--sidebar-bg);
+    border: 5px solid var(--sidebar-border);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 20px;
+
+    z-index: 100;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+
+/* == サイトロゴ Figma：縦書き Neuton 100px == */
+.site-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.site-logo-img {
+  /* 画像を縦向きに表示する */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 50%;
+  max-width: 50%;
+  object-fit: contain;
+  user-select: none;
+  transition: opacity 0.3s;
+}
+
+
+/* == ナビゲーションメニュー == */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 10px;
+}
+
+
+/* ============================================
+   メニューボタン
+   Figma：Neuton 32px、lh 40.5px
+   ============================================ */
+.menu-item {
+  background: none;
+  border: none;
+  font-family: 'Neuton', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0 8px;
+  text-align: left;
+  line-height: 40px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+/* ホバー時：文字を枠線だけにする */
+.menu-item:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border-color);
+}
+
+/* アクティブ時（現在のページ）：枠線のみで塗りなし */
+.menu-item.active {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--menu-active-stroke);
+}

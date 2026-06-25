@@ -1,0 +1,152 @@
+/* ============================================
+   layout.css
+   役割：サイドバー以外のメインエリア全体の構造
+   　　　・メインコンテンツ枠
+   　　　・背景画像レイヤー
+   　　　・outer-frame（ページ内容が入る枠）
+   　　　・.page 共通スタイル
+   　　　・セクションタイトル（装飾的な大文字）
+   　　　・ページごとの背景画像
+   ============================================ */
+
+
+/* ============================================
+   メインコンテンツ
+   サイドバーの右側、フッターを含む縦長エリア
+   ============================================ */
+.main-content {
+  flex: 0 1 1290px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+
+/* ============================================
+   背景画像レイヤー
+   画面全体に固定、ページ切り替えで画像が変わる
+   （outer-frameの後ろ、z-index: 0）
+   ============================================ */
+.page-background {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: background-image 0.5s;
+}
+
+
+/* ============================================
+   outer-frame
+   ページ内容（ts_pagesの各TSが差し込む場所）
+   Figma：border 5px、上マージン 8px
+   ============================================ */
+.outer-frame {
+  position: relative;
+  flex: 1;
+  margin: 8px 0 0 0;
+  background: var(--frame-bg);
+  border: 5px solid var(--frame-border);
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+
+/* ============================================
+   .page 共通
+   各ページのルート要素（ts_pagesが生成するsection）
+   通常は非表示、.active で表示される
+   ============================================ */
+.page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ============================================
+   セクションタイトル
+   各ページ左上に表示される装飾的な大文字
+   （pointer-events: none で操作を透過）
+   Figma：initial 250〜300px、rest 175px、枠線のみ
+   ============================================ */
+.section-title-area {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.section-title {
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+}
+
+/* 各ページの頭文字（W / P / S / C）
+   Figma：P / S / C = 300px、W = 250px */
+.section-title-initial {
+  font-family: 'Neuton', serif;
+  font-size: clamp(100px, 22vw, 300px);
+  font-weight: 400;
+  color: var(--frame-bg);
+  -webkit-text-stroke: 2px var(--section-title-stroke);
+  line-height: 1.0;
+}
+
+/* Worksページの W は少し小さい */
+.page-works .section-title-initial {
+  font-size: clamp(80px, 18vw, 250px);
+}
+
+/* 頭文字以降の文字（orks / rofile / ervice / ontact）
+   Figma：175px、stroke 3px */
+.section-title-rest {
+  font-family: 'Neuton', serif;
+  font-size: clamp(60px, 13vw, 175px);
+  font-weight: 400;
+  color: var(--frame-bg);
+  -webkit-text-stroke: 3px var(--section-title-stroke);
+  line-height: 1.0;
+  margin-bottom: 4px;
+}
+
+
+/* ============================================
+   ページごとの背景画像
+   TSが navigateTo() を呼ぶたびに
+   #pageBackground のクラスを切り替える
+   ============================================ */
+.page-bg-top {
+  background-image: url('/public/images/background/bk_top-page.png');
+}
+
+.page-bg-works {
+  background-image: url('/public/images/background/bk_works-page.png');
+}
+
+.page-bg-profile {
+  background-image: url('/public/images/background/bk_profile-page.png');
+}
+
+.page-bg-service {
+  background-image: url('/public/images/background/bk_service-page.png');
+}
+
+.page-bg-contact {
+  background-image: url('/public/images/background/bk_contact-page.png');
+}
