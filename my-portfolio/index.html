@@ -4,10 +4,81 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-portfolio</title>
+    <title>Shiro Nakano's portfolio site</title>
+
+    <!-- SEO -->
+    <meta name="description" content="仲野朱郎のポートフォリオサイト" />
+    <meta property="og:title" content="Shiro Nakano | Portfolio" />
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="app"></div>
+
+    <div id="app">
+
+
+      <!-- == サイドバー：サイト名・画面遷移ボタン == -->
+      <aside class="side-bar" id="side-bar">
+
+        <!-- サイト名ロゴ -->
+        <div class="site-logo">
+          <h2>Shiro Nakano</h2>
+        </div>
+
+        <!-- 画面遷移用ボタン -->
+        <nav class="menu" aria-label="画面遷移用ボタン">
+          <button class="menu-item active" data-page="top">-TOP</button>
+          <button class="menu-item" data-page="works">-Works</button>
+          <button class="menu-item" data-page="profile">-Profile</button>
+          <button class="menu-item" data-page="service">-Service</button>
+          <button class="menu-item" data-page="contact">-Contact</button>
+        </nav>
+      </aside>
+
+
+      <!-- == メインコンテンツ == -->
+      <main class="main-content">
+
+        <!-- 背景画像：画面遷移先ごとに切り替わるためTSファイル参照 -->
+        <div id="pageBackground" class="page-background" id="pageBackground"></div>
+
+        <!-- ページ内容が差し込まれる枠：画面遷移/モード切り替えボタン押下遷移するためコンテンツ内容は各TSファイル参照 -->
+        <div id="outerFrame"></div>
+
+
+        <!-- == フッター == -->
+        <footer class="site-footer">
+
+          <!-- ライト・ダークモード切り替えボタン -->
+          <div class="footer-left">
+            <div  class="mode-toggle"  id="modeToggle"  role="switch"  aria-checked="false"  aria-label="ライト/ダークモード切替">
+              <span class="mode-label mode-light">Light</span>
+              <span class="mode-label mode-dark">Dark</span>
+              <div class="mode-slider"></div>
+            </div>
+          </div>
+
+          <!-- 各SNSリンク -->
+          <div class="footer-right">
+            <div class="sns-links">
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <img src="./public/images/snslink_dark/x_dark.png" alt="X　サイトリンク">
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="./public/images/snslink_dark/instagram_dark.png" alt="Instagram　サイトリンク">
+              </a>
+              <a href="https://www.pixiv.net/" target="_blank" rel="noopener noreferrer" aria-label="pixiv">
+                <img src="./public/images/snslink_dark/pixiv_dark.png" alt="pixiv　サイトリンク">
+              </a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
