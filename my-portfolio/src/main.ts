@@ -9,7 +9,6 @@
 
 // ============================================
 // CSSのインポート
-// Viteがここを見て自動的にまとめてくれる
 // ============================================
 import './style/base.css';
 import './style/side-bar.css';
@@ -136,8 +135,6 @@ function toggleTheme(): void {
 
 // ============================================
 // イベントリスナーの登録
-// （サイドバー・フッターはindex.htmlに常時存在するので
-// 　ここで一度だけ登録すればOK）
 // ============================================
 function initGlobalEvents(): void {
 
@@ -151,7 +148,14 @@ function initGlobalEvents(): void {
 
   // モード切替トグル
   modeToggle.addEventListener('click', toggleTheme);
+
+  // TOPページ内のボタン押下時に各ページに遷移する
+  document.addEventListener('navigate', (e: Event) => {
+    const custom = e as CustomEvent<{ page: PageName }>;
+    navigateTo(custom.detail.page);
+  });
 }
+
 
 
 // ============================================
