@@ -1,16 +1,16 @@
 /* ============================================
-   top.css
-   役割：TOPページ専用のスタイル
-   　　　・ページ全体のレイアウト
-   　　　・キャラクター画像
-   　　　・4つのナビボタン（Works/Profile/Service/Contact）
-   　　　・装飾ポリゴン
+    top.css
+    役割：TOPページ専用のスタイル
+    　　　・ページ全体のレイアウト
+    　　　・キャラクター画像
+    　　　・4つのナビボタン（Works/Profile/Service/Contact）
+    　　　・装飾ポリゴン
    ============================================ */
 
 
 /* ============================================
-   TOPページ全体
-   中央寄せで表示
+    TOPページ全体
+    中央寄せで表示
    ============================================ */
 .page-top {
   display: none;
@@ -26,8 +26,8 @@
 
 
 /* ============================================
-   TOPページ内のコンテナ
-   キャラクター・ボタン・ポリゴンをまとめる
+    TOPページ内のコンテナ
+    キャラクター・ボタン・ポリゴンをまとめる
    ============================================ */
 .top-section-title {
   width: 100%;
@@ -40,26 +40,27 @@
 
 
 /* ============================================
-   キャラクターイラスト
-   Figma：523 x 835px、中央配置
-   ランダムで切り替わる（TSで制御）
+    キャラクターイラスト
+    Figma：523 x 835px、中央配置
+    ランダムで切り替わる（top.tsで制御）
    ============================================ */
 .top-character {
   position: absolute;
-  left: 50%;
+  left: 53%;
   top: 50%;
   transform: translate(-50%, -50%);
   max-height: 100%;
   max-width: 40%;
   object-fit: contain;
   z-index: 3;
-  pointer-events: none; /* クリックを透過 */
+  /* クリックを透過 */
+  pointer-events: none; 
 }
 
 
 /* ============================================
-   ナビボタングリッド
-   Figma：2列 x 2行、ボタン1つ 560 x 368px
+    ナビボタングリッド
+    Figma：2列 x 2行、ボタン1つ 560 x 368px
    ============================================ */
 .top-buttons {
   position: relative;
@@ -74,82 +75,49 @@
 
 
 /* ============================================
-   ナビボタン1つ
-   Figma：560 x 368px、border 5px
+    ナビボタン1つ
    ============================================ */
 .top-nav-btn {
-  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
   width: 100%;
-  aspect-ratio: 560 / 368;
-  background: var(--top-btn-bg);
-  border: 5px solid var(--top-btn-border);
   cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s;
 }
 
+/* ホバー時：SVG画像を少し薄くする */
 .top-nav-btn:hover {
-  background: var(--bg-accent);
-}
-
-
-/* ============================================
-   ボタン背景イラスト
-   半透明で敷かれる装飾画像
-   ============================================ */
-.top-nav-btn-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.top-nav-btn-bg .btn-illust {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-  transition: opacity 0.3s;
-}
-
-.top-nav-btn:hover .btn-illust {
   opacity: 0.5;
 }
 
 
 /* ============================================
-   ボタンテキスト（Works / Profile / Service / Contact）
-   Figma：Neuton 96px、stroke 3px
+    ボタンイラスト
    ============================================ */
-.top-nav-btn-text {
-  position: relative;
-  z-index: 2;
-  font-family: 'Neuton', serif;
-  font-size: clamp(28px, 5vw, 96px);
-  font-weight: 400;
-  color: var(--top-btn-text);
-  -webkit-text-stroke: 3px var(--top-btn-text-stroke);
-  line-height: 1.27;
+
+.nav-btn .btn-illust {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s; 
 }
 
 
 /* ============================================
-   装飾ポリゴン
-   右側に表示される台形の装飾
-   Figma：767 x 593px
+    中央に配置の菱形の装飾
+    Figma：767 x 593px
    ============================================ */
 .top-polygon {
   position: absolute;
-  right: -50px;
-  top: 50%;
+  top: 50.7%;
+  left: 26.6%;
   transform: translateY(-50%);
-  width: 55%;
-  height: 85%;
-  background: var(--polygon-color);
-  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-  opacity: 0.6;
   z-index: 1;
   pointer-events: none;
+}
+
+.top-polygon img {
+  width: 83%;
+  height: auto;
+  display: block;
 }

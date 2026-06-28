@@ -11,7 +11,7 @@
 // ============================================
 const characterImages: string[] = [
     '/public/images/character/Kaguya-stand.png',
-    '/public/images/character/maya-stand .png',
+    '/public/images/character/maya-stand.png',
     '/public/images/character/oto-stand.png',
 ];
 
@@ -34,37 +34,29 @@ export function renderTop(): string {
 
             <!-- Worksページ遷移ボタン -->
             <button class="top-nav-btn" data-page="works">
-                <div class="top-nav-btn-bg">
                     <img src="/public/images/toppage/Works-button.svg" alt="Worksページへ遷移するボタン” class="btn-illust">
-                </div>
             </button>
 
             <!-- Serviceページ遷移ボタン -->
             <button class="top-nav-btn" data-page="service">
-                <div class="top-nav-btn-bg">
                     <img src="/public/images/toppage/Service-button.svg" alt="Serviceページへ遷移するボタン" class="btn-illust">
-                </div>
             </button>
 
             <!-- Profileページ遷移ボタン -->
             <button class="top-nav-btn" data-page="profile">
-                <div class="top-nav-btn-bg">
                     <img src="/public/images/toppage/Profile-button.svg" alt="Profileページへ遷移するボタン" class="btn-illust">
-            </div>
             </button>
 
             <!-- Contactページ遷移ボタン -->
             <button class="top-nav-btn" data-page="contact">
-                <div class="top-nav-btn-bg">
                     <img src="/public/images/toppage/Contact-button.svg" alt="Contactページへ遷移するボタン" class="btn-illust">
-                </div>
             </button>
 
         </div>
 
         <!-- 中央の菱形の装飾 -->
         <div class="top-polygon">
-            <img src="/public/images/toppage/polygon.svg" class="" >
+            <img src="/public/images/toppage/polygon.svg">
         </div>
 
         </div>
@@ -85,12 +77,24 @@ export function initTop(): void {
 }
 
 
-// ランダムなキャラクター画像をセットする
+// ランダムなキャラクター画像を同じキャラが連続表示されないようにセットする
+const SESSION_KEY = 'lastCharacterIndex';
+
 function setRandomCharacter(): void {
     const img = document.getElementById('topCharacter') as HTMLImageElement | null;
     if (!img) return;
 
-    const randomIndex = Math.floor(Math.random() * characterImages.length);
+    // 前回のインデックスをsessionStorageから取得
+    const lastIndex = parseInt(sessionStorage.getItem(SESSION_KEY) ?? '-1');
+
+    let randomIndex: number;
+    do {
+        randomIndex = Math.floor(Math.random() * characterImages.length);
+    } while (randomIndex === lastIndex);
+
+    // 今回のインデックスをsessionStorageに保存
+    sessionStorage.setItem(SESSION_KEY, String(randomIndex));
+
     img.src = characterImages[randomIndex];
     img.alt = `キャラクターイラスト ${randomIndex + 1}`;
 }
