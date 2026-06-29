@@ -4,7 +4,7 @@
 // 　　　・プロフィールイラスト
 // 　　　・名前・経歴などのテキスト
 //
-// ※ インタラクション（クリックなど）がないため
+// ※ インタラクション（クリックなど）がなし
 // 　 initProfile は不要
 // ============================================
 
@@ -17,10 +17,12 @@ export function renderProfile(): string {
   return `
     <section class="page page-profile active" aria-label="プロフィール">
 
-      <!-- セクションタイトル装飾（P） -->
+      <!-- Profileページタイトル -->
       <div class="section-title-area">
         <div class="section-title">
+          <!-- Pの文字 -->
           <span class="section-title-initial">P</span>
+          <!-- 残りの文字 -->
           <span class="section-title-rest">rofile</span>
         </div>
       </div>
@@ -30,22 +32,28 @@ export function renderProfile(): string {
 
         <!-- 左側：プロフィールイラスト -->
         <div class="profile-illust">
-          <img
-            src="/public/images/profile_illust/nonou_light.png"
-            alt="プロフィールイラスト"
-            id="profileIllust"
-          />
+          <img src="/public/images/profile_illust/nonou_light.png" alt="ノノウのイラスト" id="profileIllust">
         </div>
 
         <!-- 右側：プロフィール詳細 -->
         <div class="profile-details">
+          <!-- 名前 -->
           <h2 class="profile-name">Shiro&nbsp;&nbsp;Nakano</h2>
+
+          <!-- 紹介文 -->
           <div class="profile-info">
-            <p>illustrator / web designer</p>
-            <p>生まれ年：2001年</p>
-            <p>出身地：&emsp;兵庫県　日本</p>
-            <p>所属：&emsp;&emsp;Fulfill株式会社</p>
-            <p>使用ツール：Figma / ClipStudio / VSCode</p>
+            <p>職業：&emsp;illustrator&nbsp;&middot;&nbsp;web designer</p>
+            <p>生年：&emsp;2001年</p>
+            <p>出身：&emsp;兵庫県</p>
+            <p>所属：&emsp;Fulfill株式会社</p>
+            <p>ツール：Figma&nbsp;&middot;&nbsp;ClipStudio&nbsp;&middot;&nbsp;VSCode</p>
+            <p>言語：&emsp;HTML&nbsp;&middot;&nbsp;CSS&nbsp;&middot;&nbsp;TypeScript</p>
+            <br>
+            <p>
+              鮮やかな色使いを好み
+              <br>
+              多様なタッチのイラストを描けます
+              </p>
           </div>
         </div>
 
