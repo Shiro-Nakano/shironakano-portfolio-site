@@ -40,10 +40,17 @@
 
 
 /* ============================================
-   outer-frame
-   ページ内容（ts_pagesの各TSが差し込む場所）
-   Figma：border 5px、上マージン 8px
+  outer-frame
+  ページ内容（ts_pagesの各TSが差し込む場所）
+  Figma：border 5px、上マージン 8px
    ============================================ */
+#app {
+  display: flex;        
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .outer-frame {
   position: relative;
   flex: 1;
@@ -104,13 +111,14 @@
   font-size: clamp(100px, 22vw, 300px);
   font-weight: 400;
   color: var(--frame-bg);
-  -webkit-text-stroke: 2px var(--section-title-stroke);
+  -webkit-text-stroke: 3px var(--section-title-stroke);
   line-height: 1.0;
 }
 
 /* Worksページの W は少し小さい */
 .page-works .section-title-initial {
   font-size: clamp(80px, 18vw, 250px);
+    margin-bottom: 15px;
 }
 
 /* 頭文字以降の文字（orks / rofile / ervice / ontact）
@@ -122,14 +130,13 @@
   color: var(--frame-bg);
   -webkit-text-stroke: 3px var(--section-title-stroke);
   line-height: 1.0;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
 }
 
 
 /* ============================================
-   ページごとの背景画像
-   TSが navigateTo() を呼ぶたびに
-   #pageBackground のクラスを切り替える
+    ページごとの背景画像
+    TSが navigateTo() を呼ぶたびに #pageBackground のクラスを切り替える
    ============================================ */
 .page-bg-top {
   background-image: url('/public/images/background/bk_top-page.png');
