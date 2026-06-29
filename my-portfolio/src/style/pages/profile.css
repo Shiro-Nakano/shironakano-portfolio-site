@@ -65,7 +65,7 @@
 /* 名前 */
 .profile-name {
   font-family: 'Neuton', serif;
-  font-size: clamp(36px, 6vw, 96px);
+  font-size: clamp(36px, 10vw, 96px);
   font-weight: 400;
   color: var(--profile-name-fill);
   -webkit-text-stroke: 3px var(--profile-name-stroke);
@@ -79,7 +79,7 @@
 
 /* 紹介文のテキスト情報 */
 .profile-info {
-  font-family: 'Neuton', serif;
+  font-family: 'Neuton','Kaisei Opti', serif;
   font-size: clamp(16px, 2.5vw, 48px);
   font-weight: 400;
   color: var(--profile-detail-text);
