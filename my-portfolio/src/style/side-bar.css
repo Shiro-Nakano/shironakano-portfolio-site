@@ -8,48 +8,38 @@
 
 
 /* ==　サイドバー枠　Figma：160 x 779px、border 5px　== */
-.sidebar {
-    position: relative;
-    width: 160px;
-    min-width: 160px;
-
-  /* 高さ：ビューポートから上マージン(8px)とフッター(42px)を引いた値 */
-    height: calc(100vh - 8px - 42px);
-    margin-top: 8px;
-
-    background: var(--sidebar-bg);
-    border: 5px solid var(--sidebar-border);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0 20px;
-
-    z-index: 100;
+.side-bar {
+  position: relative;
+  width: 160px;
+  min-width: 160px;
+  height: calc(100vh - 42px - 44px); 
+  margin-top: 44px;   
+  background: var(--sidebar-bg);
+  border: 5px solid var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 20px;
+  z-index: 100;
     transition: background 0.3s, border-color 0.3s;
 }
 
 
-/* == サイトロゴ Figma：縦書き Neuton 100px == */
+/* == サイトロゴ  == */
 .site-logo {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   overflow: hidden;
+  margin-left: 20%;
 }
 
 .site-logo-img {
-  /* 画像を縦向きに表示する */
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 95%;
+  max-width: 95%;
   object-fit: contain;
   user-select: none;
-  transition: opacity 0.3s;
 }
 
 
@@ -63,8 +53,7 @@
 
 
 /* ============================================
-   メニューボタン
-   Figma：Neuton 32px、lh 40.5px
+  メニューボタン
    ============================================ */
 .menu-item {
   background: none;

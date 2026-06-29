@@ -1,12 +1,12 @@
 /* ============================================
-   layout.css
-   役割：サイドバー以外のメインエリア全体の構造
-   　　　・メインコンテンツ枠
-   　　　・背景画像レイヤー
-   　　　・outer-frame（ページ内容が入る枠）
-   　　　・.page 共通スタイル
-   　　　・セクションタイトル（装飾的な大文字）
-   　　　・ページごとの背景画像
+  layout.css
+  役割：サイドバー以外のメインエリア全体の構造
+  　 　 ・メインコンテンツ枠
+  　　　・背景画像レイヤー
+  　　　・outer-frame（ページ内容が入る枠）
+  　　　・.page 共通スタイル
+  　　　・セクションタイトル（装飾的な大文字）
+  　　　・ページごとの背景画像
    ============================================ */
 
 
@@ -54,7 +54,7 @@
 .outer-frame {
   position: relative;
   flex: 1;
-  margin: 8px 0 0 0;
+  margin: 44px 0 0 0;
   background: var(--frame-bg);
   border: 5px solid var(--frame-border);
   overflow: hidden;
@@ -104,25 +104,22 @@
   line-height: 1;
 }
 
-/* 各ページの頭文字（W / P / S / C）
-   Figma：P / S / C = 300px、W = 250px */
+/* 各ページの頭文字（W / P / S / C）*/
 .section-title-initial {
   font-family: 'Neuton', serif;
   font-size: clamp(100px, 22vw, 300px);
   font-weight: 400;
   color: var(--frame-bg);
-  -webkit-text-stroke: 3px var(--section-title-stroke);
+  -webkit-text-stroke: 4px var(--section-title-stroke);
   line-height: 1.0;
 }
 
 /* Worksページの W は少し小さい */
 .page-works .section-title-initial {
   font-size: clamp(80px, 18vw, 250px);
-    margin-bottom: 15px;
 }
 
-/* 頭文字以降の文字（orks / rofile / ervice / ontact）
-   Figma：175px、stroke 3px */
+/* 頭文字以降の文字（orks / rofile / ervice / ontact）*/
 .section-title-rest {
   font-family: 'Neuton', serif;
   font-size: clamp(60px, 13vw, 175px);
