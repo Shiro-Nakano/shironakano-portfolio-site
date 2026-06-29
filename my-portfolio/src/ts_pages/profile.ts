@@ -52,7 +52,7 @@ export function renderProfile(): string {
             <p>
               鮮やかな色使いを好み
               <br>
-              多様なタッチのイラストを描けます
+              多様なタッチのイラスト描けます
               </p>
           </div>
         </div>
