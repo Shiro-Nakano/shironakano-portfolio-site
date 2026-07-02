@@ -34,22 +34,22 @@ export function renderTop(): string {
 
             <!-- Worksページ遷移ボタン -->
             <button class="top-nav-btn" data-page="works">
-                    <img src="/public/images/toppage/Works-button.svg" alt="Worksページへ遷移するボタン” class="btn-illust">
+                    <img src="/public/images/toppage/Works-button.svg" id="worksBtnImg" class="btn-illust" alt="Worksページへ遷移するボタン">
             </button>
 
             <!-- Serviceページ遷移ボタン -->
             <button class="top-nav-btn" data-page="service">
-                    <img src="/public/images/toppage/Service-button.svg" alt="Serviceページへ遷移するボタン" class="btn-illust">
+                    <img src="/public/images/toppage/Service-button.svg" id="serviceBtnImg" class="btn-illust" alt="Serviceページへ遷移するボタン">
             </button>
 
             <!-- Profileページ遷移ボタン -->
             <button class="top-nav-btn" data-page="profile">
-                    <img src="/public/images/toppage/Profile-button.svg" alt="Profileページへ遷移するボタン" class="btn-illust">
+                    <img src="/public/images/toppage/Profile-button.svg" id="profileBtnImg" class="btn-illust" alt="Profileページへ遷移するボタン">
             </button>
 
             <!-- Contactページ遷移ボタン -->
             <button class="top-nav-btn" data-page="contact">
-                    <img src="/public/images/toppage/Contact-button.svg" alt="Contactページへ遷移するボタン" class="btn-illust">
+                    <img src="/public/images/toppage/Contact-button.svg" id="contactBtnImg" class="btn-illust" alt="Contactページへ遷移するボタン">
             </button>
 
         </div>
