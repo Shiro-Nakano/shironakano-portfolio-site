@@ -15,7 +15,7 @@
   flex-direction: column;
 }
 
-/* セクションタイトル（S）より下のコンテンツエリア */
+/* ページ名より下のコンテンツエリア */
 .service-content {
   flex: 1;
   display: flex;
@@ -72,6 +72,26 @@
   margin: 0 2px;
 }
 
+/* スクロールバーのデザイン */
+.service-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 7px;
+}
+
+.service-scroll-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+.service-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.service-scroll-area::-webkit-scrollbar-thumb {
+  background: var(--bg-accent);
+  border-radius: 7px;
+}
 
 /* ============================================
   小タイトル

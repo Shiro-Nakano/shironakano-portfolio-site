@@ -46,7 +46,7 @@ export function renderService(): string {
           </h4>
 
           <!-- 紹介文 -->
-          <p class="service-card-desc">
+          <p class="service-card-desc service-scroll-area">
             「こんなキャラクターを作りたい！」
             <br>
             という思いを形にします。
@@ -79,7 +79,7 @@ export function renderService(): string {
           </h4>
 
           <!-- 紹介文 -->
-            <p class="service-card-desc">
+            <p class="service-card-desc service-scroll-area">
               デザインからコーディングまで
               <br>
               制作いたします。
@@ -99,7 +99,9 @@ export function renderService(): string {
           <!-- 中タイトル -->
           <div class="service-card-header">
             <h3 class="service-card-title">
-              Illustration&nbsp;<span class="service-ampersand">&amp;</span>&nbsp;Logo
+              Illustration
+              <br>
+              &nbsp;<span class="service-ampersand">&amp;</span>&nbsp;Logo Design
             </h3>
           </div>
 
@@ -111,7 +113,7 @@ export function renderService(): string {
           </h4>
 
           <!-- 紹介文 -->
-          <p class="service-card-desc">
+          <p class="service-card-desc service-scroll-area">
             SNS用のアイコンや一枚絵、
             <br>
             ブランドの顔となるロゴやテーマ画像
