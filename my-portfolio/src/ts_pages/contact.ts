@@ -139,6 +139,16 @@ function validateForm(submitBtn: HTMLButtonElement): void {
 
   submitBtn.disabled = !isValid;
   submitBtn.classList.toggle('enabled', isValid);
+
+    // ↓ 追加：セレクトボックスの背景色切り替え
+  const serviceEl = document.getElementById('contact-service') as HTMLSelectElement;
+  if (service !== '') {
+    serviceEl.style.background = 'var(--bg-primary)';
+  } 
+  else {
+    // 未選択時は --input-bg に戻す
+    serviceEl.style.background = '';  
+  }
 }
 
 

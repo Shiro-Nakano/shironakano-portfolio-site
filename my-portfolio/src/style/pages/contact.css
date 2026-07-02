@@ -172,10 +172,16 @@
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* ============================================
+  入力済み：モードの背景色に切り替え
+   ============================================ */
+.form-group input:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown) {
+  background: var(--bg-primary);
+}
 
 /* ============================================
   送信ボタン
-  ③ フォーム右下に配置
   ※必須項目が全部入力されるまで無効
    ============================================ */
 .submit-btn {
