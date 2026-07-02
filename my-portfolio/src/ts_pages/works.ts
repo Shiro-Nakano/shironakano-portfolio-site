@@ -16,6 +16,7 @@ type WorkItem = {
   title: string;
   desc: string;
   date: string;
+  thumbnail: string;
   image: string;
   alt: string;
 };
@@ -24,74 +25,83 @@ const workItems: WorkItem[] = [
   {
     category: 'illust',
     title: 'Kaguya ~the origin~',
-    desc: 'the projectの考案前に制作したイラスト\nこの作品からインスピレーションを受けプロジェクトとして制作を開始する',
-    date: '2025.1',
-    image: '/public/images/workspage-button/kaguya-illust1.png',
-    alt: 'イラスト作品：Kaguya ~the origin~',
+    desc: 'この作品から\nインスピレーションを受け\nThe Projectシリーズの\n制作を開始する',
+    date: '制作年：2024.12\n使用ツール：ClipStudio\n制作期間：5日',
+    thumbnail: '/public/images/workspage-button/kaguya-illust1.png',
+    image: '/public/images/illustration/kaguya-origin.png',
+    alt: 'イラスト：Kaguya ~the origin~',
   },
   {
     category: 'illust',
-    title: 'Kaguya illust 2',
-    desc: 'イラスト作品',
-    date: '2025',
-    image: '/public/images/workspage-button/kaguya-ilust2.png',
-    alt: 'イラスト作品2',
+    title: 'Kaguya ~neo~',
+    desc: '',
+    date: '制作年：2025.1\n使用ツール：ClipStudio\n制作期間：3日',
+    thumbnail: '/public/images/workspage-button/kaguya-ilust2.png',
+    image: '/public/images/illustration/kaguya-new.png',
+    alt: 'イラスト：Kaguya ~new~',
   },
   {
     category: 'web',
-    title: 'Kaguya Website',
-    desc: 'Webデザイン作品',
-    date: '2025',
-    image: '/public/images/workspage-button/Pkaguya-website.png',
-    alt: 'Webデザイン作品：Kaguya Website',
+    title: 'Project Kaguya',
+    desc: 'Kaguyaの\nプロフィールサイト\n<a href=\'https://kensyu.whitesnow.jp/Nakano_Shiro/index.html\' target=\'_blank\'>サイトを見る</a>',
+    date: '制作年：2025.2\n使用言語：HTML・CSS\n使用ツール：Vscode\nFigma・ClipStudio\n制作期間：3ヶ月',
+    thumbnail: '/public/images/workspage-button/Pkaguya-website.png',
+    image: '/public/images/illustration/kaguya-website-detail.png',
+    alt: 'Webデザイン：Kaguya Website',
   },
   {
     category: 'logo',
-    title: 'Kaguya Logo',
-    desc: 'ロゴデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/kaguya-logo.png',
-    alt: 'ロゴ作品：Kaguya Logo',
+    title: 'Project Kaguyaロゴ',
+    desc: 'Kaguyaの横顔と\n月をあしらいました',
+    date: '制作年：2024.12\n使用ツール：ClipStudio\n制作期間：3日',
+    thumbnail: '/public/images/workspage-button/kaguya-logo.png',
+    image: '/public/images/logo/kaguya-logoname.png',
+    alt: 'ロゴ：Kaguya',
   },
   {
     category: 'logo',
-    title: 'Maya Logo',
-    desc: 'ロゴデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/maya-logo.png',
-    alt: 'ロゴ作品：Maya Logo',
+    title: 'Project Mayaロゴ',
+    desc: 'Mayaの横顔と\n鈴蘭をあしらいました',
+    date: '制作年：2026.4\n使用ツール：ClipStudio\n制作期間：1日',
+    thumbnail: '/public/images/workspage-button/maya-logo.png',
+    image: '/public/images/logo/maya-logoname.png',
+    alt: 'ロゴ：Maya',
   },
   {
     category: 'logo',
-    title: 'Oto Logo',
-    desc: 'ロゴデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/oto-logo.png',
-    alt: 'ロゴ作品：Oto Logo',
+    title: 'Project Otoロゴ',
+    desc: 'Otoの横顔と\n羽衣をあしらいました',
+    date: '制作年：2026.5\n使用ツール：ClipStudio\n制作期間：1日',
+    thumbnail: '/public/images/workspage-button/oto-logo.png',
+    image: '/public/images/logo/oto-logoname.png',
+    alt: 'ロゴ：Oto',
   },
   {
     category: 'character',
-    title: 'Kaguya Character',
-    desc: 'キャラクターデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/kaguya-icon.png',
-    alt: 'キャラクター作品：Kaguya',
+    title: 'Kaguya',
+    desc: '年齢：？？？？歳\n身長：160cm\n職業：モデル\n出典：かぐや姫',
+    date: 'Since：2024.12\n構想期間：1ヶ月',
+    thumbnail: '/public/images/workspage-button/kaguya-icon.png',
+    image: '/public/images/character/Kaguya-stand.png',
+    alt: 'キャラクター：Kaguya',
   },
   {
     category: 'character',
-    title: 'Maya Character',
-    desc: 'キャラクターデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/maya-icon.png',
-    alt: 'キャラクター作品：Maya',
+    title: 'Maya',
+    desc: '年齢：25歳\n身長：5cm\n職業：動画配信者\n出典：おやゆび姫',
+    date: 'Since：2025.12\n構想期間：3週間',
+    thumbnail: '/public/images/workspage-button/maya-icon.png',
+    image: '/public/images/character/maya-stand.png',
+    alt: 'キャラクター：Maya',
   },
   {
     category: 'character',
-    title: 'Oto Character',
-    desc: 'キャラクターデザイン',
-    date: '2025',
-    image: '/public/images/workspage-button/oto-icon.png',
-    alt: 'キャラクター作品：Oto',
+    title: 'Oto',
+    desc: '年齢：17歳\n身長：158cm\n職業：アイドル\n・インフルエンサー\n出典：浦島太郎',
+    date: 'Since：2026.5\n構想期間：2週間',
+  thumbnail: '/public/images/workspage-button/oto-icon.png',
+    image: '/public/images/character/oto-stand.png',
+    alt: 'キャラクター：Oto',
   },
 ];
 
@@ -102,30 +112,31 @@ const workItems: WorkItem[] = [
 // ============================================
 export function renderWorks(): string {
   // 作品アイテムのHTMLをworkItemsから生成する
-  const itemsHTML = workItems
-    .map(
-      (item) => `
-        <div
-          class="work-item"
-          data-category="${item.category}"
-          data-title="${item.title}"
-          data-desc="${item.desc}"
-          data-date="${item.date}"
-          data-image="${item.image}"
-          role="button"
-          tabindex="0"
-          aria-label="${item.title}を開く"
-        >
-          <img src="${item.image}" alt="${item.alt}" loading="lazy" />
-        </div>
-      `
-    )
-    .join('');
+const itemsHTML = workItems
+  .map(
+    (item) => `
+      <div
+        class="work-item"
+        data-category="${item.category}"
+        data-title="${item.title}"
+        data-desc="${item.desc}"
+        data-date="${item.date}"
+        data-thumbnail="${item.thumbnail}"
+        data-full-image="${item.image}"
+        role="button"
+        tabindex="0"
+        aria-label="${item.title}を開く"
+      >
+        <img src="${item.thumbnail}" alt="${item.alt}" loading="lazy" />
+      </div>
+    `
+  )
+  .join('');
 
   return `
     <section class="page page-works active" aria-label="作品一覧">
 
-      <!-- セクションタイトル装飾（W） -->
+      <!-- Worksページ名 -->
       <div class="section-title-area">
         <div class="section-title">
           <span class="section-title-initial">W</span>
@@ -159,7 +170,7 @@ export function renderWorks(): string {
     <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-image">
-          <img id="modalImage" src="" alt="" />
+          <img id="modalImage" src="" alt="">
         </div>
         <div class="modal-info">
           <h3 class="modal-title" id="modalTitle"></h3>
@@ -228,11 +239,15 @@ function initModal(): void {
 
   if (!overlay || !modalImage || !modalTitle || !modalDesc || !modalDate || !workGrid) return;
 
-  // 作品アイテムをクリックしてモーダルを開く
-  workGrid.querySelectorAll<HTMLElement>('.work-item').forEach((item) => {
-    item.addEventListener('click', () => openModal(item));
+  const modalOverlay = overlay;
+  const modalImageEl = modalImage;
+  const modalTitleEl = modalTitle;
+  const modalDescEl = modalDesc;
+  const modalDateEl = modalDate;
+  const grid = workGrid;
 
-    // キーボード操作（Enter/Space）でも開けるようにする
+  grid.querySelectorAll<HTMLElement>('.work-item').forEach((item) => {
+    item.addEventListener('click', () => openModal(item));
     item.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -241,31 +256,26 @@ function initModal(): void {
     });
   });
 
-  // オーバーレイクリックで閉じる
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
   });
 
-  // Escキーで閉じる
   document.addEventListener('keydown', handleEscKey);
 
+function openModal(item: HTMLElement): void {
+  modalImageEl.src = item.dataset.fullImage ?? '';
+  modalImageEl.alt = item.querySelector('img')?.alt ?? '';
+  modalTitleEl.textContent = item.dataset.title ?? '';
+  modalDescEl.innerHTML = (item.dataset.desc ?? '').replace(/\n/g, '<br>');
+  modalDateEl.innerHTML = (item.dataset.date ?? '').replace(/\n/g, '<br>');;
 
-  function openModal(item: HTMLElement): void {
-    modalImage.src = item.dataset.image ?? '';
-    modalImage.alt = item.querySelector('img')?.alt ?? '';
-    modalTitle.textContent = item.dataset.title ?? '';
-    modalDesc.textContent = item.dataset.desc ?? '';
-    modalDate.textContent = item.dataset.date ?? '';
-
-    overlay.classList.add('active');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
+  modalOverlay.classList.add('active');
+  modalOverlay.setAttribute('aria-hidden', 'false');
+}
 
   function closeModal(): void {
-    overlay.classList.remove('active');
-    overlay.setAttribute('aria-hidden', 'true');
-
-    // ページを離れたらEscキーのリスナーを削除する
+    modalOverlay.classList.remove('active');
+    modalOverlay.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', handleEscKey);
   }
 
