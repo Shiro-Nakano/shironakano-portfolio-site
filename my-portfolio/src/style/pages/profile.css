@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-/* セクションタイトル（P）より下のコンテンツエリア */
+/* ページ名より下のコンテンツエリア */
 .profile-content {
   flex: 1;
   display: flex;
