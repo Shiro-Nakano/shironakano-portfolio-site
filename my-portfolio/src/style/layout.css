@@ -11,8 +11,8 @@
 
 
 /* ============================================
-   メインコンテンツ
-   サイドバーの右側、フッターを含む縦長エリア
+  メインコンテンツ
+  サイドバーの右側、フッターを含む縦長エリア
    ============================================ */
 .main-content {
   flex: 0 1 1290px;
@@ -24,9 +24,8 @@
 
 
 /* ============================================
-   背景画像レイヤー
-   画面全体に固定、ページ切り替えで画像が変わる
-   （outer-frameの後ろ、z-index: 0）
+  背景画像レイヤー
+  画面全体に固定、ページ切り替えで画像が変わる
    ============================================ */
 .page-background {
   position: fixed;
@@ -64,9 +63,9 @@
 
 
 /* ============================================
-   .page 共通
-   各ページのルート要素（ts_pagesが生成するsection）
-   通常は非表示、.active で表示される
+  .page 共通
+  各ページのルート要素（ts_pagesが生成するsection）
+  通常は非表示、.active で表示される
    ============================================ */
 .page {
   display: none;
@@ -85,10 +84,9 @@
 
 
 /* ============================================
-   セクションタイトル
-   各ページ左上に表示される装飾的な大文字
-   （pointer-events: none で操作を透過）
-   Figma：initial 250〜300px、rest 175px、枠線のみ
+  ページ名
+  各ページ左上に表示される装飾的な大文字
+  （pointer-events: none で操作を透過）
    ============================================ */
 .section-title-area {
   position: absolute;
@@ -109,9 +107,15 @@
   font-family: 'Neuton', serif;
   font-size: clamp(100px, 22vw, 300px);
   font-weight: 400;
-  color: var(--frame-bg);
-  -webkit-text-stroke: 4px var(--section-title-stroke);
   line-height: 1.0;
+    /* 背景画像を文字の形にくり抜く */
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  -webkit-text-stroke: 4px var(--section-title-stroke);
 }
 
 /* Worksページの W は少し小さい */
@@ -124,12 +128,43 @@
   font-family: 'Neuton', serif;
   font-size: clamp(60px, 13vw, 175px);
   font-weight: 400;
-  color: var(--frame-bg);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   -webkit-text-stroke: 3px var(--section-title-stroke);
   line-height: 1.0;
   margin-bottom: 15px;
 }
 
+/* ============================================
+  ページごとの頭文字に、そのページの背景画像を割り当てる
+   ============================================ */
+.page-top .section-title-initial,
+.page-top .section-title-rest {
+  background-image: url('/public/images/background/bk_top-page.png');
+}
+
+.page-works .section-title-initial,
+.page-works .section-title-rest {
+  background-image: url('/public/images/background/bk_works-page.png');
+}
+
+.page-profile .section-title-initial,
+.page-profile .section-title-rest {
+  background-image: url('/public/images/background/bk_profile-page.png');
+}
+
+.page-service .section-title-initial,
+.page-service .section-title-rest {
+  background-image: url('/public/images/background/bk_service-page.png');
+}
+
+.page-contact .section-title-initial,
+.page-contact .section-title-rest {
+  background-image: url('/public/images/background/bk_contact-page.png');
+}
 
 /* ============================================
     ページごとの背景画像

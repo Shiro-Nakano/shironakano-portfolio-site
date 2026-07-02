@@ -56,7 +56,6 @@
 
 /* ============================================
   フッター枠
-  Figma：高さ 42px、左右padding あり
    ============================================ */
 .site-footer {
   display: flex;
@@ -84,7 +83,7 @@
 
 
 /* ============================================
-   フッター右：コピーライト
+  フッター右：コピーライト
    ============================================ */
 .footer-common {
   position: absolute;
@@ -94,7 +93,6 @@
   align-items: center;
 }
 
-/* Figma：Neuton 24px bold、lh 30.4px */
 .commons {
   font-family: 'Neuton', serif;
   font-size: 24px;
@@ -110,7 +108,6 @@
 
 /* ============================================
   ライト/ダークモード切替トグル
-  Figma：134 x 30px、border 3px、slider 53 x 20px
    ============================================ */
 .mode-toggle {
   width: 134px;
@@ -126,7 +123,6 @@
   transition: all 0.3s;
 }
 
-/* Figma：Neuton 20px、lh 25.3px */
 .mode-label {
   font-family: 'Neuton', serif;
   font-size: 20px;
@@ -145,8 +141,7 @@
   color: var(--mode-dark-text);
 }
 
-/* スライダー（白い丸いつまみ）
-   Figma：53 x 20px */
+/* スライダー（白い丸いつまみ）*/
 .mode-slider {
   position: absolute;
   width: 55px;
