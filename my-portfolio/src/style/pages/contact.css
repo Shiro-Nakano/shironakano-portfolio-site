@@ -1,70 +1,81 @@
 /* ============================================
-   contact.css
-   役割：Contactページ専用のスタイル
-   　　　・ページレイアウト
-   　　　・イントロテキスト
-   　　　・お問い合わせフォーム
-   　　　・入力欄・セレクト・テキストエリア
-   　　　・送信ボタン
+  contact.css
+  役割：Contactページ専用のスタイル
+  　　　・ページレイアウト
+  　　　・イントロテキスト
+  　　　・お問い合わせフォーム
+  　　　・入力欄・セレクト・テキストエリア
+  　　　・送信ボタン
    ============================================ */
 
 
 /* ============================================
-   Contactページ全体
+  Contactページ全体
    ============================================ */
 .page-contact.active {
   display: flex;
   flex-direction: column;
 }
 
-/* セクションタイトル（C）より下のコンテンツエリア */
+/* タイトルとメッセージを横並びに */
+.page-contact .section-title-area {
+  display: flex;
+  align-items: center;
+  gap: 14%;
+  padding: 0 30px;
+}
+
+
+/* ============================================
+  メッセージ・注意事項
+  （section-title-area 内でタイトル横に配置）
+   ============================================ */
+.contact-message {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(12px, 1.3vw, 20px);
+  font-weight: 400;
+  color: var(--contact-intro-text);
+  line-height: 1.6;
+  text-align: left;
+  flex: 1;
+}
+
+
+/* ============================================
+  コンテンツエリア
+   ============================================ */
 .contact-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px 30px;
-  margin-top: clamp(100px, 14vw, 180px);
+  padding: 16px 30px 30px;
+  margin-top: clamp(160px, 22vw, 280px);
   overflow-y: auto;
 }
 
 
 /* ============================================
-   イントロテキスト
-   Figma：Kaisei Opti 24px
-   ============================================ */
-.contact-intro {
-  font-family: 'Kaisei Opti', serif;
-  font-size: clamp(14px, 1.6vw, 24px);
-  font-weight: 400;
-  color: var(--contact-intro-text);
-  line-height: 1.45;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-
-/* ============================================
-   フォーム本体
-   Figma：1232 x 494px、border 5px、radius 62px
+  フォーム本体
    ============================================ */
 .contact-form {
   background: var(--card-bg);
   border: 5px solid var(--card-border);
   border-radius: 62px;
-  padding: 36px 44px 60px;
+  padding: 36px 44px 76px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
   max-width: 1232px;
+  flex: 1;           /* ← 縦に伸ばす */
   position: relative;
   transition: background 0.3s, border-color 0.3s;
 }
 
 
 /* ============================================
-   フォーム左側（名前・会社名・メール・希望サービス）
+  フォーム左側（名前・会社名・メール・サービス）
    ============================================ */
 .form-left {
   flex: 1;
@@ -72,11 +83,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: space-evenly;
 }
 
 
 /* ============================================
-   フォーム右側（お問い合わせ内容テキストエリア）
+  フォーム右側（お問い合わせ内容テキストエリア）
    ============================================ */
 .form-right {
   flex: 1;
@@ -86,7 +98,7 @@
 
 
 /* ============================================
-   フォームグループ（ラベル＋入力欄のセット）
+  フォームグループ（ラベル＋入力欄のセット）
    ============================================ */
 .form-group {
   display: flex;
@@ -94,7 +106,7 @@
   gap: 10px;
 }
 
-/* ラベル　Figma：Kaisei Opti 20px */
+/* ラベル名　*/
 .form-group label {
   font-family: 'Kaisei Opti', serif;
   font-size: clamp(14px, 1.3vw, 20px);
@@ -105,8 +117,11 @@
   min-width: 110px;
 }
 
-/* テキスト入力・セレクトボックス
-   Figma：359 x 50px、border 3px、radius 10px */
+.asterisk{
+  color: var(--asterisk-color);
+}
+
+/* テキスト入力・セレクトボックス */
 .form-group input,
 .form-group select {
   flex: 1;
@@ -132,20 +147,15 @@
 
 
 /* ============================================
-   お問い合わせ内容グループ（右側・縦並び）
+  お問い合わせ内容グループ（右側・縦並び）
    ============================================ */
 .form-group-details {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.form-group-details label {
-  padding-top: 14px;
-}
-
-/* テキストエリア
-   Figma：500 x 373px、border 3px、radius 10px */
+/* テキストエリア */
 .form-group textarea {
   flex: 1;
   height: 100%;
@@ -164,14 +174,14 @@
 
 
 /* ============================================
-   送信ボタン
-   Figma：171 x 36px、border 3px、radius 10px
-   必須項目が全部入力されるまで無効
+  送信ボタン
+  ③ フォーム右下に配置
+  ※必須項目が全部入力されるまで無効
    ============================================ */
 .submit-btn {
   position: absolute;
   bottom: 20px;
-  left: 44px;
+  right: 44px;
   width: 171px;
   height: 36px;
   background: var(--submit-bg);

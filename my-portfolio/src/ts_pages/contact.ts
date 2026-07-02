@@ -15,23 +15,28 @@ export function renderContact(): string {
   return `
     <section class="page page-contact active" aria-label="お問い合わせ">
 
-      <!-- セクションタイトル装飾（C） -->
+        <!-- ページタイトル+メッセージ -->
       <div class="section-title-area">
+
+        <!-- Contactページタイトル  -->
         <div class="section-title">
           <span class="section-title-initial">C</span>
           <span class="section-title-rest">ontact</span>
         </div>
+
+        <!-- メッセージ・注意事項 -->
+        <p class="contact-message">
+          お仕事のご相談などなどお気軽にお問い合わせください。
+          <br>
+          もちろん「こんなイメージで」という相談も大歓迎です！
+          <br>
+          お問い合わせ後、3営業日以内にご返事いたします。
+        </p>
       </div>
+
 
       <!-- メインコンテンツ -->
       <div class="contact-content">
-
-        <!-- イントロテキスト -->
-        <p class="contact-intro">
-          お仕事のご相談などなどお気軽にお問い合わせください。<br />
-          もちろん「こんなイメージで」という相談も大歓迎です！<br />
-          お問い合わせ後、3営業日以内にご返事いたします。
-        </p>
 
         <!-- お問い合わせフォーム -->
         <form class="contact-form" id="contactForm" novalidate>
@@ -40,45 +45,38 @@ export function renderContact(): string {
           <div class="form-left">
 
             <div class="form-group">
-              <label for="contact-name">お名前 *</label>
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                placeholder="山田 太郎"
-                required
-              />
+              <label for="contact-name">お名前<span class="asterisk">&#42;</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="山田 太郎" required>
             </div>
 
             <div class="form-group">
               <label for="contact-company">会社名</label>
-              <input
-                type="text"
-                id="contact-company"
-                name="company"
-                placeholder="株式会社〇〇"
-              />
+              <input type="text" id="contact-company" name="company" placeholder="株式会社〇〇">
             </div>
 
             <div class="form-group">
-              <label for="contact-email">E-mail *</label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                placeholder="example@email.com"
-                required
-              />
+              <label for="contact-email">E-mail<span class="asterisk">&#42;</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="example@email.com" required>
             </div>
 
             <div class="form-group">
-              <label for="contact-service">希望サービス *</label>
+              <label for="contact-service">サービス<span class="asterisk">&#42;</span></label>
               <select id="contact-service" name="service" required>
-                <option value="">選択してください</option>
-                <option value="illust-logo">イラスト・ロゴ制作</option>
-                <option value="web-design">Webデザイン</option>
-                <option value="character-design">キャラクターデザイン</option>
-                <option value="other">その他</option>
+                <option value="">
+                  選択してください
+                </option>
+                <option value="illust-logo">
+                  イラスト・ロゴ制作
+                </option>
+                <option value="web-design">
+                  Webデザイン
+                </option>
+                <option value="character-design">
+                  キャラクターデザイン
+                </option>
+                <option value="other">
+                  その他
+                </option>
               </select>
             </div>
 
@@ -88,24 +86,16 @@ export function renderContact(): string {
           <div class="form-right">
             <div class="form-group form-group-details">
               <label for="contact-details">
-                お問合わせ<br />　　　内容 *
+                お問合わせ
+                <br>
+                内容<span class="asterisk">&#42;</span>
               </label>
-              <textarea
-                id="contact-details"
-                name="details"
-                placeholder="ご依頼内容をご記入ください"
-                required
-              ></textarea>
+              <textarea id="contact-details" name="details" placeholder="ご依頼内容をご記入ください" required></textarea>
             </div>
           </div>
 
-          <!-- 送信ボタン（必須項目が全部入力されるまで無効） -->
-          <button
-            type="submit"
-            class="submit-btn"
-            id="submitBtn"
-            disabled
-          >
+          <!-- 送信ボタン -->
+          <button type="submit" class="submit-btn" id="submitBtn" disabled>
             送信
           </button>
 
@@ -171,7 +161,7 @@ function handleSubmit(
 
   // Google FormsのエンドポイントURL
   // ※ フォームIDは実際のGoogle FormsのURLに合わせて変更する
-  const formUrl = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScpeUSeFP1pExK5GvILert62qeTM--NtbHS2ws3afTKfrftLQ/viewform?embedded=true';
 
   const formData = new FormData();
   formData.append('entry.name',    name);
