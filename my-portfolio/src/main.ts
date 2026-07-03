@@ -134,21 +134,21 @@ function setTheme(theme: Theme): void {
   const logo = document.getElementById('siteLogo') as HTMLImageElement;
   if (logo) {
     logo.src = theme === 'dark'
-      ? './public/images/site-logo/site-logo_dark.png'
-      : './public/images/site-logo/site-logo_light.png';
+      ? './images/site-logo/site-logo_dark.png'
+      : './images/site-logo/site-logo_light.png';
   }
 
   // プロフィールイラストの切り替え
   const img = document.getElementById('profileIllust') as HTMLImageElement;
   if (img) {
     img.src = theme === 'dark'
-      ? '/public/images/profile_illust/nonou_dark.png'
-      : '/public/images/profile_illust/nonou_light.png';
+      ? '/images/profile_illust/nonou_dark.png'
+      : '/images/profile_illust/nonou_light.png';
   }
 
   // TOPページのナビボタン（Works/Service/Profile/Contact）の切り替え
-  // ライト画像：/public/images/toppage/{baseName}.svg
-  // ダーク画像：/public/images/toppage/{baseName}_dark.svg
+  // ライト画像：/images/toppage/{baseName}.svg
+  // ダーク画像：/images/toppage/{baseName}_dark.svg
   const navButtonImages: Record<string, string> = {
     worksBtnImg:   'Works-button',
     serviceBtnImg: 'Service-button',
@@ -160,8 +160,8 @@ function setTheme(theme: Theme): void {
     const btnImg = document.getElementById(id) as HTMLImageElement | null;
     if (btnImg) {
       btnImg.src = theme === 'dark'
-        ? `/public/images/toppage/${baseName}_dark.svg`
-        : `/public/images/toppage/${baseName}.svg`;
+        ? `/images/toppage/${baseName}_dark.svg`
+        : `/images/toppage/${baseName}.svg`;
     }
   });
 }

@@ -3,9 +3,9 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { renderTop, initTop } from '../top';
 
 const CHARACTER_IMAGES = [
-  '/public/images/character/Kaguya-stand.png',
-  '/public/images/character/maya-stand.png',
-  '/public/images/character/oto-stand.png',
+  '/images/character/Kaguya-stand.png',
+  '/images/character/maya-stand.png',
+  '/images/character/oto-stand.png',
 ];
 const SESSION_KEY = 'lastCharacterIndex';
 

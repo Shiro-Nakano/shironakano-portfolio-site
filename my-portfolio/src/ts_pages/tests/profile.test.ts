@@ -18,7 +18,7 @@ describe('renderProfile', () => {
   it('プロフィールイラストのimgタグが正しいsrc/idを持つ', () => {
     const html = renderProfile();
     expect(html).toContain('id="profileIllust"');
-    expect(html).toContain('/public/images/profile_illust/nonou_light.png');
+    expect(html).toContain('/images/profile_illust/nonou_light.png');
     expect(html).toContain('alt="ノノウのイラスト"');
   });
 
@@ -39,7 +39,7 @@ describe('renderProfile', () => {
 
     expect(section).not.toBeNull();
     expect(img).not.toBeNull();
-    expect(img.getAttribute('src')).toBe('/public/images/profile_illust/nonou_light.png');
+    expect(img.getAttribute('src')).toBe('/images/profile_illust/nonou_light.png');
   });
 
   it('呼び出すたびに同じ内容の文字列を返す（副作用がない）', () => {

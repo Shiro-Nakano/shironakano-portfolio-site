@@ -143,27 +143,27 @@
    ============================================ */
 .page-top .section-title-initial,
 .page-top .section-title-rest {
-  background-image: url('/public/images/background/bk_top-page.png');
+  background-image: url('/images/background/bk_top-page.png');
 }
 
 .page-works .section-title-initial,
 .page-works .section-title-rest {
-  background-image: url('/public/images/background/bk_works-page.png');
+  background-image: url('/images/background/bk_works-page.png');
 }
 
 .page-profile .section-title-initial,
 .page-profile .section-title-rest {
-  background-image: url('/public/images/background/bk_profile-page.png');
+  background-image: url('/images/background/bk_profile-page.png');
 }
 
 .page-service .section-title-initial,
 .page-service .section-title-rest {
-  background-image: url('/public/images/background/bk_service-page.png');
+  background-image: url('/images/background/bk_service-page.png');
 }
 
 .page-contact .section-title-initial,
 .page-contact .section-title-rest {
-  background-image: url('/public/images/background/bk_contact-page.png');
+  background-image: url('/images/background/bk_contact-page.png');
 }
 
 /* ============================================
@@ -171,21 +171,21 @@
     TSが navigateTo() を呼ぶたびに #pageBackground のクラスを切り替える
    ============================================ */
 .page-bg-top {
-  background-image: url('/public/images/background/bk_top-page.png');
+  background-image: url('/images/background/bk_top-page.png');
 }
 
 .page-bg-works {
-  background-image: url('/public/images/background/bk_works-page.png');
+  background-image: url('/images/background/bk_works-page.png');
 }
 
 .page-bg-profile {
-  background-image: url('/public/images/background/bk_profile-page.png');
+  background-image: url('/images/background/bk_profile-page.png');
 }
 
 .page-bg-service {
-  background-image: url('/public/images/background/bk_service-page.png');
+  background-image: url('/images/background/bk_service-page.png');
 }
 
 .page-bg-contact {
-  background-image: url('/public/images/background/bk_contact-page.png');
+  background-image: url('/images/background/bk_contact-page.png');
 }

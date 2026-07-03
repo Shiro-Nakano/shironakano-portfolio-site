@@ -32,7 +32,7 @@ export function renderProfile(): string {
 
         <!-- 左側：プロフィールイラスト -->
         <div class="profile-illust">
-          <img src="/public/images/profile_illust/nonou_light.png" alt="ノノウのイラスト" id="profileIllust">
+          <img src="/images/profile_illust/nonou_light.png" alt="ノノウのイラスト" id="profileIllust">
         </div>
 
         <!-- 右側：プロフィール詳細 -->
