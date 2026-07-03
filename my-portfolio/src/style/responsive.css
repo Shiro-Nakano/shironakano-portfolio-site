@@ -1,0 +1,371 @@
+/* ============================================
+    responsive.css
+    役割：スマートフォン向けレイアウト調整
+    　　　PCレイアウト（サイドバー＋メイン枠）の
+    　　　構造はそのまま、全体を縮小して再現する
+   ============================================ */
+
+@media (max-width: 768px) {
+
+html {
+    font-size: 14px;
+}
+
+#app {
+    width: 90%;
+    margin: 0 auto;
+}
+
+  /* == サイドバー == */
+.side-bar {
+    width: 100px;
+    min-width: 90px;
+    height: calc(100vh - 34px - 34px);
+    margin-top: 34px;
+    border-width: 3px;
+    padding: 5px 0 12px;
+}
+
+.site-logo {
+    flex: 0 0 auto;
+    align-items: flex-start;
+    margin-left: 12%;
+    margin-top: 16px;
+}
+
+  /* == メニューボタン == */
+
+.menu {
+    /* PC版はgap:0だが、モバイルではボタン間に余白を作る */
+    gap: 10px;
+}
+
+.menu-item {
+    font-size: 25px;
+    line-height: 22px;
+    padding: 0 5px;
+}
+
+.menu-item:hover,.menu-item.active {
+    -webkit-text-stroke: 0.6px var(--menu-active-stroke);
+}
+
+  /* == メインエリア / 外枠 == */
+.main-content {
+    flex: 1 1 auto;
+}
+
+.outer-frame {
+    margin: 34px 0 0 0;
+    border-width: 3px;
+}
+
+  /* == SNSリンク（右上） == */
+.header-right {
+    top: 34px; /* outer-frameのmargin-topと同じ値 */
+    bottom: auto;
+    right: 4px;
+    transform: translateY(-100%); /* 自身の高さぶん上へ引き上げ、底面をouter-frameの上辺に密着させる */
+}
+
+.sns-links {
+    gap: 8px;
+}
+
+.sns-links img {
+    height: 16px;
+    width: auto;
+}
+
+  /* == フッター == */
+.site-footer {
+    height: 34px;
+    min-height: 34px;
+    padding: 4px 10px 4px 8px;
+}
+
+/* PC版は絶対配置(%)だが、コンテナ幅が大きく変わるため
+     モバイルでは通常のflex space-betweenに戻す */
+.footer-left {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer-common {
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mode-toggle {
+    width: 78px;
+    height: 20px;
+    border-width: 2px;
+    padding: 0 6px;
+}
+
+.mode-label {
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.mode-slider {
+    width: 30px;
+    height: 12px;
+    left: 2px;
+}
+
+[data-theme="dark"] .mode-slider {
+    left: calc(100% - 32px);
+}
+
+.commons {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+  /* == ページ名（頭文字の大きな装飾文字） == */
+.section-title-initial {
+    font-size: clamp(50px, 30vw, 150px);
+    -webkit-text-stroke: 2px var(--section-title-stroke);
+}
+
+.page-works .section-title-initial {
+    font-size: clamp(40px, 34cqw, 110px);
+}
+
+.section-title-rest {
+    font-size: clamp(28px, 22cqw, 70px);
+    -webkit-text-stroke: 1.5px var(--section-title-stroke);
+    margin-bottom: 8px;
+}
+
+/* ============================================
+    TOPページ
+    ナビボタン（SVG）とポリゴン装飾は非表示
+    キャラクターのみをコンテンツエリアに表示する
+     ============================================ */
+.top-buttons,.top-polygon {
+    display: none;
+}
+
+.top-character {
+    left: 50%;
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ============================================
+    Worksページ
+    ぺージ名（Works）をコンテンツ枠の実際の幅に
+    合わせてスケール（cqwで指定）
+    ソートボタンを縮小（折り返し位置は要確認）
+    サムネイルを2列にし、左右の余白をgapと均等にする
+     ============================================ */
+/* section-title内のcqw指定を機能させるため、
+     基準となるouter-frameをコンテナ化する */
+.outer-frame {
+    container-type: inline-size;
+}
+
+.page-works .section-title-initial {
+    font-size: clamp(50px, 30vw, 150px);
+}
+
+.page-works .section-title-rest {
+    font-size: clamp(28px, 22cqw, 70px);
+}
+
+.sort-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 5個中3個で折り返し＝Logoの次のCharacterから2行目になる */
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sort-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+    height: 30px;
+    padding: 0 6px;
+    line-height: 26px;
+    border-radius: 6px;
+    border-width: 2px;
+}
+
+.works-content {
+    padding: 16px; 
+    margin-top: clamp(120px, 40cqw, 220px);
+}
+
+.works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* ============================================
+    Profileページ
+    キャラクターイラストを非表示にし、
+    紹介文カードをコンテンツエリア中央に配置する
+     ============================================ */
+.profile-illust {
+    display: none;
+}
+
+.profile-content {
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: clamp(70px, 26cqw, 150px); /* タイトルと被らないよう下げる */
+}
+
+.profile-details {
+    flex: 0 1 auto;
+    width: 90%;
+    align-self: center;
+    margin: 0 auto;
+    border-radius: 24px;
+    border-width: 3px;
+    padding: 16px 14px;
+}
+
+.profile-name {
+    font-size: clamp(20px, 7vw, 34px);
+    -webkit-text-stroke: 2px var(--profile-name-stroke);
+    margin-bottom: 8px;
+}
+
+.profile-info {
+    font-size: clamp(11px, 3.6vw, 15px);
+}
+
+.profile-info p {
+    overflow-wrap: anywhere;
+}
+
+/* ============================================
+    Serviceページ
+    コンテンツを縦に並べる
+     ============================================ */
+
+.service-content {
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 16px;
+    padding: 16px 8px 16px 16px;
+    margin-right: 16px;
+}
+
+.service-card-header {
+    text-align: center;
+}
+
+.service-card-title {
+    font-size: clamp(40px, 3.5vw, 55px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+}
+
+.service-card-subtitle,
+.service-card-desc {
+    text-align: center;
+}
+
+.service-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.service-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.service-content::-webkit-scrollbar-thumb {
+    background: var(--bg-accent);
+    border-radius: 7px;
+}
+
+.service-card {
+    flex: 0 0 auto;
+    min-height: 220px;
+}
+
+/* ============================================
+    Contactページ
+    コンテンツを縦に並べる
+    説明文の削除
+     ============================================ */
+
+.page-contact .section-title-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.contact-message {
+    display: none;
+}
+
+.contact-content {
+    margin-top: clamp(120px, 40cqw, 220px);
+    padding: 16px;
+}
+
+.contact-form {
+    flex-direction: column;
+    padding: 24px 20px 80px;
+    border-radius: 24px;
+    border-width: 3px;
+    gap: 14px;
+}
+
+.form-left {
+    width: 100%;
+    gap: 14px;
+}
+
+.form-right {
+    width: 100%;
+}
+
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.form-group label {
+    min-width: 0;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+}
+
+.form-group-details {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.submit-btn {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+}
+
+}
