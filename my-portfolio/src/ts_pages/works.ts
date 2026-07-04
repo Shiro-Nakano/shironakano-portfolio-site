@@ -11,6 +11,8 @@
 // 作品データ
 // 作品を追加・編集するときはここを変更する
 // ============================================
+const BASE_URL = import.meta.env.BASE_URL;
+
 type WorkItem = {
   category: 'illust' | 'logo' | 'character' | 'web';
   title: string;
@@ -27,8 +29,8 @@ const workItems: WorkItem[] = [
     title: 'Kaguya ~the origin~',
     desc: 'この作品から\nインスピレーションを受け\nThe Projectシリーズの\n制作を開始する',
     date: '制作年：2024.12\n使用ツール：ClipStudio\n制作期間：5日',
-    thumbnail: '/images/workspage-button/kaguya-illust1.png',
-    image: '/images/illustration/kaguya-origin.png',
+    thumbnail: `${BASE_URL}images/workspage-button/kaguya-illust1.png`,
+    image: `${BASE_URL}images/illustration/kaguya-origin.png`,
     alt: 'イラスト：Kaguya ~the origin~',
   },
   {
@@ -36,8 +38,8 @@ const workItems: WorkItem[] = [
     title: 'Kaguya ~neo~',
     desc: '',
     date: '制作年：2025.1\n使用ツール：ClipStudio\n制作期間：3日',
-    thumbnail: '/images/workspage-button/kaguya-ilust2.png',
-    image: '/images/illustration/kaguya-new.png',
+    thumbnail: `${BASE_URL}images/workspage-button/kaguya-ilust2.png`,
+    image: `${BASE_URL}images/illustration/kaguya-new.png`,
     alt: 'イラスト：Kaguya ~new~',
   },
   {
@@ -45,8 +47,8 @@ const workItems: WorkItem[] = [
     title: 'Project Kaguya',
     desc: 'Kaguyaの\nプロフィールサイト\n<a href=\'https://kensyu.whitesnow.jp/Nakano_Shiro/index.html\' target=\'_blank\'>サイトを見る</a>',
     date: '制作年：2025.2\n使用言語：HTML・CSS\n使用ツール：Vscode\nFigma・ClipStudio\n制作期間：3ヶ月',
-    thumbnail: '/images/workspage-button/Pkaguya-website.png',
-    image: '/images/illustration/kaguya-website-detail.png',
+    thumbnail: `${BASE_URL}images/workspage-button/Pkaguya-website.png`,
+    image: `${BASE_URL}images/illustration/kaguya-website-detail.png`,
     alt: 'Webデザイン：Kaguya Website',
   },
   {
@@ -54,8 +56,8 @@ const workItems: WorkItem[] = [
     title: 'Project Kaguyaロゴ',
     desc: 'Kaguyaの横顔と\n月をあしらいました',
     date: '制作年：2024.12\n使用ツール：ClipStudio\n制作期間：3日',
-    thumbnail: '/images/workspage-button/kaguya-logo.png',
-    image: '/images/logo/kaguya-logoname.png',
+    thumbnail: `${BASE_URL}images/workspage-button/kaguya-logo.png`,
+    image: `${BASE_URL}images/logo/kaguya-logoname.png`,
     alt: 'ロゴ：Kaguya',
   },
   {
@@ -63,8 +65,8 @@ const workItems: WorkItem[] = [
     title: 'Project Mayaロゴ',
     desc: 'Mayaの横顔と\n鈴蘭をあしらいました',
     date: '制作年：2026.4\n使用ツール：ClipStudio\n制作期間：1日',
-    thumbnail: '/images/workspage-button/maya-logo.png',
-    image: '/images/logo/maya-logoname.png',
+    thumbnail: `${BASE_URL}images/workspage-button/maya-logo.png`,
+    image: `${BASE_URL}images/logo/maya-logoname.png`,
     alt: 'ロゴ：Maya',
   },
   {
@@ -72,8 +74,8 @@ const workItems: WorkItem[] = [
     title: 'Project Otoロゴ',
     desc: 'Otoの横顔と\n羽衣をあしらいました',
     date: '制作年：2026.5\n使用ツール：ClipStudio\n制作期間：1日',
-    thumbnail: '/images/workspage-button/oto-logo.png',
-    image: '/images/logo/oto-logoname.png',
+    thumbnail: `${BASE_URL}images/workspage-button/oto-logo.png`,
+    image: `${BASE_URL}images/logo/oto-logoname.png`,
     alt: 'ロゴ：Oto',
   },
   {
@@ -81,8 +83,8 @@ const workItems: WorkItem[] = [
     title: 'Kaguya',
     desc: '年齢：？？？？歳\n身長：160cm\n職業：モデル\n出典：かぐや姫',
     date: 'Since：2024.12\n構想期間：1ヶ月',
-    thumbnail: '/images/workspage-button/kaguya-icon.png',
-    image: '/images/character/Kaguya-stand.png',
+    thumbnail: `${BASE_URL}images/workspage-button/kaguya-icon.png`,
+    image: `${BASE_URL}images/character/Kaguya-stand.png`,
     alt: 'キャラクター：Kaguya',
   },
   {
@@ -90,8 +92,8 @@ const workItems: WorkItem[] = [
     title: 'Maya',
     desc: '年齢：25歳\n身長：5cm\n職業：動画配信者\n出典：おやゆび姫',
     date: 'Since：2025.12\n構想期間：3週間',
-    thumbnail: '/images/workspage-button/maya-icon.png',
-    image: '/images/character/maya-stand.png',
+    thumbnail: `${BASE_URL}images/workspage-button/maya-icon.png`,
+    image: `${BASE_URL}images/character/maya-stand.png`,
     alt: 'キャラクター：Maya',
   },
   {
@@ -99,8 +101,8 @@ const workItems: WorkItem[] = [
     title: 'Oto',
     desc: '年齢：17歳\n身長：158cm\n職業：アイドル\n・インフルエンサー\n出典：浦島太郎',
     date: 'Since：2026.5\n構想期間：2週間',
-  thumbnail: '/images/workspage-button/oto-icon.png',
-    image: '/images/character/oto-stand.png',
+  thumbnail: `${BASE_URL}images/workspage-button/oto-icon.png`,
+    image: `${BASE_URL}images/character/oto-stand.png`,
     alt: 'キャラクター：Oto',
   },
 ];

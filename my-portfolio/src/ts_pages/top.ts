@@ -9,10 +9,13 @@
 // ============================================
 // キャラクター画像リスト
 // ============================================
+// ファイル冒頭に追加
+const BASE_URL = import.meta.env.BASE_URL;
+
 const characterImages: string[] = [
-    '/images/character/Kaguya-stand.png',
-    '/images/character/maya-stand.png',
-    '/images/character/oto-stand.png',
+  `${BASE_URL}images/character/Kaguya-stand.png`,
+  `${BASE_URL}images/character/maya-stand.png`,
+  `${BASE_URL}images/character/oto-stand.png`,
 ];
 
 
@@ -34,29 +37,29 @@ export function renderTop(): string {
 
             <!-- Worksページ遷移ボタン -->
             <button class="top-nav-btn" data-page="works">
-                    <img src="/images/toppage/Works-button.svg" id="worksBtnImg" class="btn-illust" alt="Worksページへ遷移するボタン">
+                    <img src="${BASE_URL}images/toppage/Works-button.svg" id="worksBtnImg" class="btn-illust" alt="Worksページへ遷移するボタン">
             </button>
 
             <!-- Serviceページ遷移ボタン -->
             <button class="top-nav-btn" data-page="service">
-                    <img src="/images/toppage/Service-button.svg" id="serviceBtnImg" class="btn-illust" alt="Serviceページへ遷移するボタン">
+                    <img src="${BASE_URL}images/toppage/Service-button.svg" id="serviceBtnImg" class="btn-illust" alt="Serviceページへ遷移するボタン">
             </button>
 
             <!-- Profileページ遷移ボタン -->
             <button class="top-nav-btn" data-page="profile">
-                    <img src="/images/toppage/Profile-button.svg" id="profileBtnImg" class="btn-illust" alt="Profileページへ遷移するボタン">
+                    <img src="${BASE_URL}images/toppage/Profile-button.svg" id="profileBtnImg" class="btn-illust" alt="Profileページへ遷移するボタン">
             </button>
 
             <!-- Contactページ遷移ボタン -->
             <button class="top-nav-btn" data-page="contact">
-                    <img src="/images/toppage/Contact-button.svg" id="contactBtnImg" class="btn-illust" alt="Contactページへ遷移するボタン">
+                    <img src="${BASE_URL}images/toppage/Contact-button.svg" id="contactBtnImg" class="btn-illust" alt="Contactページへ遷移するボタン">
             </button>
 
         </div>
 
         <!-- 中央の菱形の装飾 -->
         <div class="top-polygon">
-            <img src="/images/toppage/polygon.svg">
+            <img src="${BASE_URL}images/toppage/polygon.svg">
         </div>
 
         </div>

@@ -10,6 +10,7 @@
 // ============================================
 // CSSのインポート
 // ============================================
+const BASE_URL = import.meta.env.BASE_URL;
 import './style/base.css';
 import './style/side-bar.css';
 import './style/layout.css';
@@ -127,41 +128,37 @@ function setTheme(theme: Theme): void {
     modeToggle.setAttribute('aria-checked', 'true');
   } else {
     app.removeAttribute('data-theme');
-    modeToggle.setAttribute('aria-checked', 'false');
+modeToggle.setAttribute('aria-checked', 'false');
   }
-
 // サイトロゴの切り替え
   const logo = document.getElementById('siteLogo') as HTMLImageElement;
   if (logo) {
     logo.src = theme === 'dark'
-      ? './images/site-logo/site-logo_dark.png'
-      : './images/site-logo/site-logo_light.png';
+      ? `${BASE_URL}images/site-logo/site-logo_dark.png`
+      : `${BASE_URL}images/site-logo/site-logo_light.png`;
   }
-
   // プロフィールイラストの切り替え
   const img = document.getElementById('profileIllust') as HTMLImageElement;
   if (img) {
     img.src = theme === 'dark'
-      ? '/images/profile_illust/nonou_dark.png'
-      : '/images/profile_illust/nonou_light.png';
+      ? `${BASE_URL}images/profile_illust/nonou_dark.png`
+      : `${BASE_URL}images/profile_illust/nonou_light.png`;
   }
-
   // TOPページのナビボタン（Works/Service/Profile/Contact）の切り替え
-  // ライト画像：/images/toppage/{baseName}.svg
-  // ダーク画像：/images/toppage/{baseName}_dark.svg
+  // ライト画像：${BASE_URL}images/toppage/{baseName}.svg
+  // ダーク画像：${BASE_URL}images/toppage/{baseName}_dark.svg
   const navButtonImages: Record<string, string> = {
     worksBtnImg:   'Works-button',
     serviceBtnImg: 'Service-button',
     profileBtnImg: 'Profile-button',
     contactBtnImg: 'Contact-button',
   };
-
   Object.entries(navButtonImages).forEach(([id, baseName]) => {
     const btnImg = document.getElementById(id) as HTMLImageElement | null;
     if (btnImg) {
       btnImg.src = theme === 'dark'
-        ? `/images/toppage/${baseName}_dark.svg`
-        : `/images/toppage/${baseName}.svg`;
+        ? `${BASE_URL}images/toppage/${baseName}_dark.svg`
+        : `${BASE_URL}images/toppage/${baseName}.svg`;
     }
   });
 }
