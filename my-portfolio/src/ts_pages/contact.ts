@@ -65,16 +65,16 @@ export function renderContact(): string {
                 <option value="">
                   選択してください
                 </option>
-                <option value="illust-logo">
+                <option value="イラスト・ロゴ制作">
                   イラスト・ロゴ制作
                 </option>
-                <option value="web-design">
+                <option value="Webデザイン">
                   Webデザイン
                 </option>
-                <option value="character-design">
+                <option value="キャラクターデザイン">
                   キャラクターデザイン
                 </option>
-                <option value="other">
+                <option value="その他">
                   その他
                 </option>
               </select>
@@ -170,17 +170,15 @@ function handleSubmit(
   const details = (document.getElementById('contact-details') as HTMLTextAreaElement).value.trim();
 
   // Google FormsのエンドポイントURL
-  // ※ フォームIDは実際のGoogle FormsのURLに合わせて変更する
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScpeUSeFP1pExK5GvILert62qeTM--NtbHS2ws3afTKfrftLQ/viewform?embedded=true';
+  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScpeUSeFP1pExK5GvILert62qeTM--NtbHS2ws3afTKfrftLQ/formResponse';
 
   const formData = new FormData();
-  formData.append('entry.name',    name);
-  formData.append('entry.email',   email);
-  formData.append('entry.company', company);
-  formData.append('entry.service', service);
-  formData.append('entry.details', details);
+  formData.append('entry.692023856',    name);
+  formData.append('entry.1897614929',   email);
+  formData.append('entry.1630365324', company);
+  formData.append('entry.932049171', service);
+  formData.append('entry.936801961', details);
 
-  // no-cors：Google Formsはレスポンスが読めないが送信はできる
   fetch(formUrl, {
     method: 'POST',
     body: formData,
